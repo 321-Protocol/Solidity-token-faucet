@@ -5,7 +5,7 @@
 <head>
 
   <meta charset='UTF-8'>
-  <title>Dildo coin Faucet!</title>
+  <title>321-Protocol Test USDT Faucet!</title>
 
   <meta name="robots" content="noindex">
 
@@ -111,16 +111,16 @@ body {
     <script type="text/javascript" src="./src/jquery.min.js"></script>
     <script type="text/javascript" src="./src/web3.min.js"></script>
     <div class="divtitle" > 
-    <p style="font-size: xx-large; color: white">Welcome to 🍆 coin faucet, Get 30 Free dildos!</p>
+    <p style="font-size: xx-large; color: white">Welcome to 321-Protocol test USDT faucet, Get 100 Free USDT!</p>
     <p id="errormeta" style="font-size: xx-large; color: rgb(250, 108, 42)"> </p>
-    <p style="font-size: medium; color: white">How to use: Connect with a browser and metamask to binance smart chain or visit http://dildocoin.eu/faucet from TrustWallet dapps, then change ethereum to binance icon in the top right corner. then the button bellow. <br/>* Only 1 airdrop per address</p>
+    <p style="font-size: medium; color: white">How to use: Connect with a browser and metamask to BSC-Testnet smart chain ， then the button bellow. <br/>* Only 1 airdrop per address</p>
   
     <div style="padding: 4px; font-size: medium; color: white">  Ðildo In faucet Tank: <div style="display: inline-block; font-size: medium; color: rgb(31, 236, 41)" id="intank">0</div></div>
     <div style="padding: 4px; font-size: medium; color: white">  Ðildo In your wallet: <div style="display: inline-block; font-size: medium; color: rgb(31, 236, 41)" id="inwallet">0</div></div>
     <div style="display: inline-block; margin-top: 30px;">
    
 
-        <button  id="buttonget" onClick="javascript:getCoins();" class="glow-on-hover">GIVE ME DILDOS</button>
+        <button  id="buttonget" onClick="javascript:getCoins();" class="glow-on-hover">GIVE ME USDT</button>
       
       
       
@@ -133,17 +133,17 @@ body {
   <script>
 
 var abi = JSON.parse( '[ { "inputs": [ { "internalType": "address", "name": "_tokenInstance", "type": "address" } ], "stateMutability": "nonpayable", "type": "constructor" }, { "inputs": [ { "internalType": "address", "name": "_address", "type": "address" } ], "name": "allowedToWithdraw", "outputs": [ { "internalType": "bool", "name": "", "type": "bool" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "requestTokens", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "name": "tokenAmount", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "tokenInstance", "outputs": [ { "internalType": "contract IBEP20", "name": "", "type": "address" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "waitTime", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" } ]' );
-var web3 = new Web3(new Web3.providers.HttpProvider('https://bsc-dataseed1.defibit.io/'));
+var web3 = new Web3(new Web3.providers.HttpProvider('https://data-seed-prebsc-1-s1.binance.org:8545/'));
 
 window.addEventListener('load', async () => {
     // Modern dapp browsers...
    
     if (window.ethereum) {
         window.web3 = new Web3(ethereum);
-        window.contract = new web3.eth.Contract(abi, '0x94D0358B6469D00c27333D9ba03EA0d6DdE8f0A9');
+        window.contract = new web3.eth.Contract(abi, '0xB4C0ae6E31FECde9356923096Ad708BC2AF8F34e');
 
   //  document.getElementById('intank').innerText = getBanaceof('0x51da276a2fc6c79570cdbd39ec51921bef4a02f2', '0x94D0358B6469D00c27333D9ba03EA0d6DdE8f0A9');
-   getBanaceof('0x51da276a2fc6c79570cdbd39ec51921bef4a02f2', '0x94D0358B6469D00c27333D9ba03EA0d6DdE8f0A9','intank')
+   getBanaceof('0xa60F11D423d837d2dccB7D37c3B39e97967A48ed', '0xB4C0ae6E31FECde9356923096Ad708BC2AF8F34e','intank')
         try {
             // Request account access if needed
             await ethereum.enable();
@@ -152,7 +152,7 @@ window.addEventListener('load', async () => {
             await	web3.eth.requestAccounts().then((s) => {
                 window.accs = s[0];
       
-                getBanaceof('0x51da276a2fc6c79570cdbd39ec51921bef4a02f2',  window.accs,'inwallet')
+                getBanaceof('0xa60F11D423d837d2dccB7D37c3B39e97967A48ed',  window.accs,'inwallet')
 
         })
         } catch (error) {
@@ -164,8 +164,8 @@ window.addEventListener('load', async () => {
     else if (window.web3) {
         window.web3 = new Web3(web3.currentProvider);
     
-		  window.contract = new web3.eth.Contract(abi, '0x94D0358B6469D00c27333D9ba03EA0d6DdE8f0A9');
-          getBanaceof('0x51da276a2fc6c79570cdbd39ec51921bef4a02f2', '0x94D0358B6469D00c27333D9ba03EA0d6DdE8f0A9','intank')
+		  window.contract = new web3.eth.Contract(abi, '0xB4C0ae6E31FECde9356923096Ad708BC2AF8F34e');
+          getBanaceof('0xa60F11D423d837d2dccB7D37c3B39e97967A48ed', '0xB4C0ae6E31FECde9356923096Ad708BC2AF8F34e','intank')
         // Acccounts always exposed
 
         try {
@@ -173,9 +173,9 @@ window.addEventListener('load', async () => {
 		await	web3.eth.requestAccounts().then((s) => {
             window.accs  = s[0];
    
-            getBanaceof('0x51da276a2fc6c79570cdbd39ec51921bef4a02f2',  window.accs,'inwallet')
+            getBanaceof('0xa60F11D423d837d2dccB7D37c3B39e97967A48ed',  window.accs,'inwallet')
           
-            getBanaceof('0x51da276a2fc6c79570cdbd39ec51921bef4a02f2', '0x94D0358B6469D00c27333D9ba03EA0d6DdE8f0A9','intank')
+            getBanaceof('0xa60F11D423d837d2dccB7D37c3B39e97967A48ed', '0xB4C0ae6E31FECde9356923096Ad708BC2AF8F34e','intank')
         }) 
 
     } catch (error) {
@@ -205,11 +205,11 @@ async function getCoins() {
   //  myContract.transfer(otherAddress, aNumber, { from: myAccount });
    
  await window.contract.methods.requestTokens().send({ from: window.accs  }).then(function(result){
-    alert('Yaaay!!! You just got 30 dildos! enjoy them!')
+    alert('OK!!! You just got 100 USDT! enjoy them!')
 }).catch(function(err) {
      
 
-    alert('Error: Maybe you already toke some dildos?')
+    alert('Error: Maybe you already toke some USDT?')
 });
   
  }
